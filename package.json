@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "load": "node index.js load"
   },
   "dependencies": {
     "@discordjs/builders": "^1.4.0",
