@@ -11,7 +11,7 @@ const TOKEN = process.env.TOKEN
 const LOAD_SLASH = process.argv[2] == 'load'
 
 const CLIENT_ID = '655597195063590912'
-const GUILD_ID = null
+// const GUILD_ID = null
 
 const client = new Discord.Client({
   intents: ['Guilds', 'GuildVoiceStates'],
@@ -40,7 +40,7 @@ if (LOAD_SLASH) {
   const rest = new REST({ version: '9' }).setToken(TOKEN)
   console.log('deploying slash commands')
   rest
-    .put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {
+    .put(Routes.applicationCommands(CLIENT_ID), {
       body: commands,
     })
     .then(() => {
